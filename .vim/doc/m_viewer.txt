@@ -3,12 +3,8 @@
 MARIONETTE VIEWER by Paul Yang 
 ===========================================================================================
 This plugin is for browsing b2g html source through marionette
-Note:Currently only support unagi with engineering build, marionette module is required
-
+Note:Currently only support unagi with engineering build
 You MUST run m_viewer_client.py as bridge; and of course phone should be connected as well
-
-Install: make install
-Uninstall: make uninstall
 ===========================================================================================
 
 Key mapped: >
