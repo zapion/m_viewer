@@ -1,5 +1,4 @@
 #!/usr/bin/python
-import sys
 import logging
 import logging.config
 import subprocess
@@ -17,17 +16,18 @@ logger.info('start marionette client')
 
 def init():
     ret = subprocess.check_output("adb devices", shell=True)
-    if("unagi" in ret):
-        print(ret)
-    else:
-        print("No unagi connected")
-        sys.exit(1)
+    print(ret)
+    ## TODO: find more error handling if available
+
     import socket
     s = socket.socket()
     try:
         s.bind(("localhost", 2828))
         s.close()
-        ret = subprocess.check_output("adb forward tcp:2828 tcp:2828", shell=True)
+        ret = subprocess.check_output(
+            "adb forward tcp:2828 tcp:2828",
+            shell=True
+            )
     except socket.error:
         print("address already in use")
     mar = Marionette()
